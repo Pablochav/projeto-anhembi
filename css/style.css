@@ -19,23 +19,26 @@
   --sombra: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   background: #e8e8e8;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 
-/* ---- moldura do celular (390x844) ---- */
+/* ---- moldura do app: sempre ocupa 100% da altura da tela ---- */
 .celular {
   position: relative;
   width: 100%;
   max-width: 390px;
+  height: 100%;
   /* dvh = altura realmente visível no celular (desconta a barra do navegador) */
-  height: 100vh;
   height: 100dvh;
-  max-height: 844px;
   background: linear-gradient(to bottom, var(--azul-principal) 0%, var(--azul-medio) 50%, #ffffff 100%);
   border: 1px solid #000;
   display: flex;
@@ -43,11 +46,10 @@ body {
   overflow: hidden;
 }
 
-/* em telas de celular, o app ocupa a tela inteira, sem moldura */
+/* em telas de celular, o app ocupa a largura inteira, sem moldura */
 @media (max-width: 430px) {
   .celular {
     max-width: none;
-    max-height: none;
     border: none;
   }
 }
