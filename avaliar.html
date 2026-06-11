@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deixe seu feedback — Projeto Anhembi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="celular">
+    <div class="conteudo">
+      <div class="topo">
+        <input class="barra-pesquisa" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
+        <a class="botao-filtro" href="filtragem.html" title="Filtrar">
+          <img src="img/filtro.png" alt="Filtros">
+        </a>
+      </div>
+
+      <div class="titulo-secao"><span>Feedback</span></div>
+
+      <div class="lista-causas">
+        <article class="cartao-causa">
+          <img class="foto" src="img/cachorros.png" alt="Filhotes de cachorro">
+          <div class="corpo">
+            <h2>Apoio abrigo animais RS</h2>
+            <h3>Amigos dos Animais</h3>
+            <p>Estamos buscando voluntários dedicados e apaixonados por animais para ajudar em um abrigo, que acolhe animais resgatados das enchentes no Rio Grande do Sul.</p>
+            <div class="rodape">
+              <span>Porto Alegre, RS</span>
+              <span>Recorrente</span>
+            </div>
+          </div>
+        </article>
+
+        <section class="painel-feedback">
+          <h2>Deixe seu feedback!</h2>
+
+          <div class="caixa-comentario">
+            <p class="pergunta">O que você achou dessa causa :</p>
+            <textarea id="comentario" rows="1" placeholder="Fazer um comentário"></textarea>
+          </div>
+
+          <div class="estrelas" id="estrelas">
+            <img src="img/estrela.png" alt="1 estrela" data-valor="1">
+            <img src="img/estrela.png" alt="2 estrelas" data-valor="2">
+            <img src="img/estrela.png" alt="3 estrelas" data-valor="3">
+            <img src="img/estrela.png" alt="4 estrelas" data-valor="4">
+            <img src="img/estrela.png" alt="5 estrelas" data-valor="5">
+          </div>
+
+          <button class="botao-azul botao-enviar" id="enviar">Enviar</button>
+        </section>
+      </div>
+    </div>
+
+    <nav class="menu-inferior">
+      <a href="perfil.html" title="Perfil"><img src="img/usuario-contorno.png" alt="Perfil"></a>
+      <a href="feedback.html" title="Feedback"><img src="img/chat-cheio.png" alt="Feedback"></a>
+      <a href="home.html" title="Home"><img src="img/casa-contorno.png" alt="Home"></a>
+      <a href="horas.html" title="Horas"><img src="img/relogio-contorno.png" alt="Horas"></a>
+      <a href="notificacoes.html" title="Notificações"><img src="img/sino-contorno.png" alt="Notificações"></a>
+    </nav>
+  </div>
+
+  <script>
+    // Avaliação por estrelas: clicar na 3ª estrela acende as 3 primeiras
+    var estrelas = document.querySelectorAll('#estrelas img');
+    var nota = 0;
+
+    estrelas.forEach(function (estrela) {
+      estrela.addEventListener('click', function () {
+        nota = Number(estrela.dataset.valor);
+        estrelas.forEach(function (e) {
+          e.classList.toggle('ativa', Number(e.dataset.valor) <= nota);
+        });
+      });
+    });
+
+    document.getElementById('enviar').addEventListener('click', function () {
+      if (nota === 0) {
+        alert('Escolha uma nota de 1 a 5 estrelas antes de enviar.');
+        return;
+      }
+      alert('Obrigado pelo seu feedback! Nota: ' + nota + ' estrela(s).');
+      window.location.href = 'feedback.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,663 @@
+/* ============================================
+   PROJETO ANHEMBI — estilos compartilhados
+   Gerado a partir do design no Figma
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-principal: #38b6ff;
+  --azul-medio: #77cdff;
+  --azul-botao: #00a1ff;
+  --azul-claro: #d1edfd;
+  --azul-caixa: #bce6ff;
+  --cinza-escuro: #343434;
+  --sombra: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ---- moldura do celular (390x844) ---- */
+.celular {
+  position: relative;
+  width: 390px;
+  min-height: 100vh;
+  max-height: 844px;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--azul-principal) 0%, var(--azul-medio) 50%, #ffffff 100%);
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* tela de login: fundo azul liso */
+.celular.login {
+  background: var(--azul-principal);
+}
+
+.conteudo {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+
+/* ---- barra de pesquisa + botão de filtro ---- */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 41px 30px 0 30px;
+}
+
+.barra-pesquisa {
+  flex: 1;
+  height: 37px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  outline: none;
+}
+
+.barra-pesquisa::placeholder {
+  color: #000;
+}
+
+.botao-filtro {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.botao-filtro img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---- título da seção com linhas ---- */
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 30px 0 30px;
+}
+
+.titulo-secao::before,
+.titulo-secao::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #000;
+}
+
+.titulo-secao span {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- cartões de causas (Home / Feedback) ---- */
+.cartao-causa {
+  display: block;
+  width: 331px;
+  margin: 0 auto 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+}
+
+.lista-causas {
+  padding-top: 20px;
+}
+
+.cartao-causa .foto {
+  width: 100%;
+  height: 133px;
+  object-fit: cover;
+  display: block;
+}
+
+.cartao-causa .foto.logo {
+  object-fit: contain;
+  padding: 8px 0;
+}
+
+.cartao-causa .corpo {
+  padding: 14px 15px 16px 15px;
+}
+
+.cartao-causa h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cartao-causa h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cinza-escuro);
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+.cartao-causa p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0e0e0e;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cartao-causa .rodape {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ---- menu inferior com ícones ---- */
+.menu-inferior {
+  border-top: 1px solid #000;
+  padding: 11px 13px 13px 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.menu-inferior a {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.menu-inferior img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============================================
+   LOGIN
+   ============================================ */
+.login-conteudo {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 37px;
+  color: #fff;
+}
+
+.login-conteudo h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 143px 0 36px 0;
+}
+
+.campo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  margin-bottom: 9px;
+  padding: 0 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cinza-escuro);
+  outline: none;
+}
+
+.campo::placeholder {
+  color: var(--cinza-escuro);
+}
+
+.botao-branco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  margin-top: 25px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.esqueci-senha {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 75px 0 26px 0;
+}
+
+.divisor::before,
+.divisor::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #fff;
+}
+
+.divisor span {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.botao-social {
+  font-size: 17px;
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+
+/* ============================================
+   PERFIL
+   ============================================ */
+.cartao-branco {
+  width: 331px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+.cartao-perfil {
+  margin-top: 20px;
+  padding: 43px 0 38px 0;
+  text-align: center;
+}
+
+.cartao-perfil .foto-perfil {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.cartao-perfil .nome {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cartao-dados {
+  margin-top: 37px;
+  padding: 32px 20px 40px 20px;
+  text-align: center;
+}
+
+.cartao-dados h2 {
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-bottom: 18px;
+}
+
+.cartao-dados ul {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.cartao-dados li {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.cartao-dados .quem-somos {
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ============================================
+   HORAS
+   ============================================ */
+.cartao-horas {
+  margin-top: 20px;
+  padding: 29px 10px 15px 10px;
+}
+
+.barra-progresso {
+  width: 311px;
+  margin: 0 auto;
+  height: 55px;
+  border: 4px solid #000;
+  border-radius: 28px;
+  padding: 6px;
+}
+
+.barra-progresso .preenchimento {
+  height: 100%;
+  background: #000;
+  border-radius: 20px;
+}
+
+.rotulos-progresso {
+  display: flex;
+  justify-content: space-between;
+  width: 311px;
+  margin: 4px auto 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.caixa-horas {
+  width: 311px;
+  margin: 12px auto 0 auto;
+  background: var(--azul-medio);
+  border-radius: 10px;
+  padding: 14px 0 18px 0;
+  text-align: center;
+}
+
+.caixa-horas .rotulo {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.caixa-horas .valor {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.botao-azul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: var(--azul-botao);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao-certificado {
+  width: 286px;
+  height: 66px;
+  margin-top: 90px;
+}
+
+/* ============================================
+   NOTIFICAÇÕES
+   ============================================ */
+.aviso {
+  display: block;
+  width: 354px;
+  margin: 0 auto 16px auto;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  padding: 7px 10px 8px 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.lista-avisos {
+  padding-top: 20px;
+}
+
+.aviso h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.aviso p {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.aviso .data {
+  display: block;
+  text-align: right;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* ---- detalhe da notificação ---- */
+.msg-aviso {
+  width: 331px;
+  margin: 95px auto 0 auto;
+  background: var(--azul-claro);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  padding: 18px 17px 24px 17px;
+}
+
+.msg-aviso .cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.msg-aviso .cabecalho img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+
+.msg-aviso .cabecalho h1 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.msg-aviso .mensagem {
+  background: #fff;
+  border-radius: 7px;
+  padding: 14px 15px 16px 15px;
+}
+
+.msg-aviso .mensagem h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.msg-aviso .mensagem p {
+  font-size: 13px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.msg-aviso .mensagem .data {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ============================================
+   FEEDBACK (avaliação)
+   ============================================ */
+.painel-feedback {
+  width: 331px;
+  margin: 0 auto 30px auto;
+  background: #fcfcfc;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  padding: 21px 0 20px 0;
+  text-align: center;
+}
+
+.painel-feedback h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.caixa-comentario {
+  width: 257px;
+  margin: 0 auto;
+  background: var(--azul-caixa);
+  border-radius: 8px;
+  padding: 14px 8px 18px 8px;
+}
+
+.caixa-comentario .pergunta {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 14px;
+}
+
+.caixa-comentario textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #505050;
+  font-family: inherit;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  resize: none;
+  outline: none;
+}
+
+.caixa-comentario textarea::placeholder {
+  color: #505050;
+}
+
+.estrelas {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.estrelas img {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  opacity: 0.25;
+  transition: opacity 0.15s;
+}
+
+.estrelas img.ativa {
+  opacity: 1;
+}
+
+.botao-enviar {
+  width: 86px;
+  height: 28px;
+  background: var(--azul-principal);
+  border: 1px solid #000;
+  font-size: 13px;
+}
+
+/* ============================================
+   FILTRAGEM
+   ============================================ */
+.grade-filtros {
+  display: grid;
+  grid-template-columns: 151px 144px;
+  justify-content: space-between;
+  row-gap: 34px;
+  padding: 40px 30px 0 30px;
+}
+
+.botao-categoria {
+  height: 92px;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.botao-categoria.selecionado {
+  background: var(--azul-medio);
+}
+
+.campo-endereco {
+  display: block;
+  width: 330px;
+  height: 34px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cinza-escuro);
+  text-transform: uppercase;
+  outline: none;
+}
+
+.campo-endereco::placeholder {
+  color: var(--cinza-escuro);
+}
+
+.botao-filtrar {
+  width: 131px;
+  height: 36px;
+  margin-top: 34px;
+  font-size: 15px;
+}
